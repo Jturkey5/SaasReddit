@@ -1,35 +1,108 @@
-# Description
+# Reddit Video Maker Bot 🎥
 
-A Python bot that generates Reddit Story Videos and automatically posts them on TikTok / Youtube Shorts. The script pulls threads from a given subreddit, adds Text-To-Speech, and edits them into short videos over some gameplay footage.
+All done WITHOUT video editing or asset compiling. Just pure ✨programming magic✨.
 
-# How it works
+Created by Lewis Menelaws & [TMRRW](https://tmrrwinc.ca)
 
-* Pulls a random thread from a certain subreddit using the **Reddit API**
-* Translates the thread(if needed) using the **Google Translate API**
-* Generates the Text-To-Speech using **Microsoft's Azure Speech API**
-* Takes screenshots using **Playwright**
-* Edits the video using **MoviePy**
-* Posts the video using **Selenium**
+<a target="_blank" href="https://tmrrwinc.ca">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/6053155/170528535-e274dc0b-7972-4b27-af22-637f8c370133.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/6053155/170528582-cb6671e7-5a2f-4bd4-a048-0e6cfa54f0f7.png">
+  <img src="https://user-images.githubusercontent.com/6053155/170528582-cb6671e7-5a2f-4bd4-a048-0e6cfa54f0f7.png" width="350">
+</picture>
 
-# How to use it
+</a>
 
-If you wish to use this bot on your machine, you will need to get your own API keys from Reddit, Microsoft Azure and Google Cloud and put them in a file called apiKeys(check the code in main.py for formatting). Also, you will need to update the path of your Chrome Beta browser in the upload functions. Once you do that you will need to install:
-* Mutagen
-* MoviePy
-* Azure.Cognitiveservices.Speech
-* Playwright
-* Google-Cloud
-* Selenium
-* Webdriver_Manager
+## Video Explainer
 
-# Results
+[![lewisthumbnail](https://user-images.githubusercontent.com/6053155/173631669-1d1b14ad-c478-4010-b57d-d79592a789f2.png)
+](https://www.youtube.com/watch?v=3gjcY_00U1w)
 
-Here's a video created by this bot:
+## Motivation 🤔
+
+These videos on TikTok, YouTube and Instagram get MILLIONS of views across all platforms and require very little effort.
+The only original thing being done is the editing and gathering of all materials...
+
+... but what if we can automate that process? 🤔
+
+## Disclaimers 🚨
+
+- **At the moment**, this repository won't attempt to upload this content through this bot. It will give you a file that
+  you will then have to upload manually. This is for the sake of avoiding any sort of community guideline issues.
+
+## Requirements
+
+- Python 3.10
+- Playwright (this should install automatically in installation)
+
+## Installation 👩‍💻
+
+1. Clone this repository
+2. Run `pip install -r requirements.txt`
+3. Run `python -m playwright install` and `python -m playwright install-deps`
+
+**EXPERIMENTAL!!!!**
+
+On macOS and Linux (debian, arch, fedora and centos, and based on those), you can run an install script that will automatically install steps 1 to 3. (requires bash)
+
+`bash <(curl -sL https://raw.githubusercontent.com/elebumm/RedditVideoMakerBot/master/install.sh)`
+
+This can also be used to update the installation
+
+4. Run `python main.py`
+5. Visit [the Reddit Apps page.](https://www.reddit.com/prefs/apps), and set up an app that is a "script". Paste any URL in redirect URL. Ex:`https://jasoncameron.dev`
+6. The bot will ask you to fill in your details to connect to the Reddit API, and configure the bot to your liking
+7. Enjoy 😎
+8. If you need to reconfigure the bot, simply open the `config.toml` file and delete the lines that need to be changed. On the next run of the bot, it will help you reconfigure those options.
+
+(Note if you got an error installing or running the bot try first rerunning the command with a three after the name e.g. python3 or pip3)
+
+If you want to read more detailed guide about the bot, please refer to the [documentation](https://reddit-video-maker-bot.netlify.app/)
+
+## Video
+
+https://user-images.githubusercontent.com/66544866/173453972-6526e4e6-c6ef-41c5-ab40-5d275e724e7c.mp4
+
+## Contributing & Ways to improve 📈
+
+In its current state, this bot does exactly what it needs to do. However, improvements can always be made!
+
+I have tried to simplify the code so anyone can read it and start contributing at any skill level. Don't be shy :) contribute!
+
+- [ ] Creating better documentation and adding a command line interface.
+- [x] Allowing the user to choose background music for their videos.
+- [x] Allowing users to choose a reddit thread instead of being randomized.
+- [x] Allowing users to choose a background that is picked instead of the Minecraft one.
+- [x] Allowing users to choose between any subreddit.
+- [x] Allowing users to change voice.
+- [x] Checks if a video has already been created
+- [x] Light and Dark modes
+- [x] NSFW post filter
+
+Please read our [contributing guidelines](CONTRIBUTING.md) for more detailed information.
+
+### For any questions or support join the [Discord](https://discord.gg/qfQSx45xCV) server
+
+## Developers and maintainers.
+
+Elebumm (Lewis#6305) - https://github.com/elebumm (Founder)
+
+Jason (personality.json) - https://github.com/JasonLovesDoggo (Maintainer)
+
+Simon (OpenSourceSimon) - https://github.com/OpenSourceSimon
+
+CallumIO (c.#6837) - https://github.com/CallumIO
+
+Verq (Verq#2338) - https://github.com/CordlessCoder
+
+LukaHietala (Pix.#0001) - https://github.com/LukaHietala
+
+Freebiell (Freebie#3263) - https://github.com/FreebieII
+
+Aman Raza (electro199#8130) - https://github.com/electro199
+
+Cyteon (cyteon) - https://github.com/cyteon
 
 
-https://user-images.githubusercontent.com/7760397/222571103-422ca8f9-6178-4129-8d6b-32cf7363aea4.mp4
-
-
-
-
-
+## LICENSE
+[Roboto Fonts](https://fonts.google.com/specimen/Roboto/about) are licensed under [Apache License V2](https://www.apache.org/licenses/LICENSE-2.0)
