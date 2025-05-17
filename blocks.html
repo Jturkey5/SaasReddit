@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Block Game</h1>
+            <div class="header-controls">
+                <button id="simulationButton" class="btn primary">
+                    <i class="fas fa-play"></i>
+                    <span>Start Simulation</span>
+                </button>
+                <button id="clearButton" class="btn secondary">
+                    <i class="fas fa-trash"></i>
+                    <span>Clear</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="game-container">
+                <canvas id="blocksCanvas"></canvas>
+            </div>
+
+            <div class="controls-panel">
+                <div class="panel-section">
+                    <h2>Players</h2>
+                    <div class="player-controls">
+                        <div class="slider-container">
+                            <label for="playerCount">Number of Players:</label>
+                            <input type="range" id="playerCount" min="1" max="6" value="1">
+                            <span id="playerCountValue">1</span>
+                        </div>
+                        <div id="playerBlocks" class="player-blocks"></div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Blocks</h2>
+                    <div class="inventory">
+                        <div class="item" data-type="wall">
+                            <i class="fas fa-square"></i>
+                            <span>Wall</span>
+                        </div>
+                        <div class="item" data-type="finish">
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Finish</span>
+                        </div>
+                        <div class="item" data-type="shrinker">
+                            <i class="fas fa-compress-alt"></i>
+                            <span>Shrinker</span>
+                        </div>
+                        <div class="item" data-type="pusher">
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <span>Pusher</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="directionSelector" class="panel-section direction-selector" style="display: none;">
+                    <h2>Pusher Direction</h2>
+                    <div class="direction-buttons">
+                        <button class="direction-btn" data-direction="north">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <button class="direction-btn" data-direction="south">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                        <button class="direction-btn" data-direction="east">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="direction-btn" data-direction="west">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Pusher Settings</h2>
+                    <div class="slider-container">
+                        <label for="pusherLength">Length:</label>
+                        <input type="range" id="pusherLength" min="1" max="10" value="3">
+                        <span id="pusherLengthValue">3</span>
+                    </div>
+                    <div class="slider-container">
+                        <label for="pusherSpeed">Speed:</label>
+                        <input type="range" id="pusherSpeed" min="0.1" max="2" step="0.1" value="0.5">
+                        <span id="pusherSpeedValue">0.5</span>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Level</h2>
+                    <div class="level-controls">
+                        <button id="saveButton" class="btn secondary">
+                            <i class="fas fa-save"></i>
+                            <span>Save Level</span>
+                        </button>
+                        <button id="loadButton" class="btn secondary">
+                            <i class="fas fa-folder-open"></i>
+                            <span>Load Level</span>
+                        </button>
+                        <button id="premadeButton" class="btn secondary">
+                            <i class="fas fa-star"></i>
+                            <span>Premade Level</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid-size-controls">
+                    <h3>Grid Size</h3>
+                    <div class="grid-size-buttons">
+                        <button id="extraSmallGrid" class="grid-size-btn">Extra Small</button>
+                        <button id="smallGrid" class="grid-size-btn">Small</button>
+                        <button id="mediumGrid" class="grid-size-btn selected">Medium</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="blocks.js"></script>
+</body>
+</html>
